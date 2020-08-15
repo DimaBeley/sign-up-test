@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Walkthrought</title>
+    <meta name="description" content="sign-up test task">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body style="padding: 0; margin: 0;">
+    <div class="sign-in">
+        <div class="background-gradient"></div>
+        <div class="background-circle-1"></div>
+        <div class="background-circle-2"></div>
+        <div class="background-rectangle-1 rectangle"></div>
+        <div class="background-rectangle-2 rectangle"></div>
+        <header class="header">
+            <div class="header__logo">
+                <div class="header__logo-img"></div>
+                <span class="header__logo-text">Protect</span>
+            </div>
+        </header>
+        <main class="main">
+            <h1 class="main__title">Welcome aboard Coach</h1>
+            <h2 class="main__sub-title">Please watch the video to proceed</h2>
+            <div class="main__video-wrapper">
+                <video width="528px" height="314px" class="video" controls poster="src/images/videoPoster.png" >
+                    <source src="src/video/video.mp4" type="video/mp4">
+                    Your browser doesn't support HTML5 video tag.
+                </video>
+                <button type="button" class="main__video-wrapper_play-pause" onclick="playPause()">
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <svg width="131px" height="138px" class="main__video-wrapper_play-pause_play-button-icon" viewBox="0 0 131 138" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                        <desc>Created with Lunacy</desc>
+                        <defs>
+                            <filter filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB" id="filter_1">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feOffset dx="0" dy="10" />
+                                <feGaussianBlur stdDeviation="20" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0.17254902 0 0 0 0 0.85490197 0 0 0 0 0.6117647 0 0 0 0.14901961 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect0_dropShadow" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect0_dropShadow" result="shape" />
+                            </filter>
+                        </defs>
+                        <g filter="url(#filter_1)">
+                            <path d="M10.147 7.78623L10.0965 7.76494L2.01346 0.313365C1.55658 -0.104455 0.820791 -0.104455 0.363911 0.313365L0.353286 0.321349C0.13547 0.520945 0 0.789733 0 1.08247L0 15.9883C0 16.289 0.146096 16.5604 0.363911 16.7574C0.820791 17.1752 1.55658 17.1752 2.01346 16.7574L10.147 9.29517C10.5933 8.87735 10.5933 8.20138 10.147 7.78623L10.147 7.78623Z" transform="translate(60 50)" id="Fill-1" fill="#FFFFFF" stroke="none" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <span class="confirm-text">Confirm that you watched the Training Video</span>
+            <button type="button" class="confirm-button animated_button" onclick="alert('Thanks for watch!')">Confirm</button>
+        </main>
+    </div>
+
+    <script>
+
+        const video = document.getElementsByClassName('video')[0];
+        const playButton = document.getElementsByClassName('main__video-wrapper_play-pause')[0];
+
+
+        video.onpause = () => playButton.style = '';
+        video.onplay = () => playButton.style = 'display: none';
+
+        const playPause = () => video.paused ? video.play() : video.pause();
+
+    </script>
+</body>
+</html>
